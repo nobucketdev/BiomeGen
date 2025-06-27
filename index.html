@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biome Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Biome Map Generator</h1>
+    </header>
+
+    <main>
+        <div class="controls">
+            <div class="input-group">
+                <label for="seedInput">Seed:</label>
+                <input type="number" id="seedInput" value="12345">
+                <button id="generateBtn">Generate</button>
+            </div>
+            <div class="input-group">
+                <label for="findInput">Find Biome:</label>
+                <input type="text" id="findInput" placeholder="e.g., plains">
+                <button id="findBtn">Find</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </div>
+
+        <div class="map-grid">
+            <div class="map-container">
+                <canvas id="landCanvas" width="500" height="250"></canvas>
+                <div class="map-label">Land</div>
+            </div>
+            <div class="map-container">
+                <canvas id="tempCanvas" width="500" height="250"></canvas>
+                <div class="map-label">Temperature</div>
+            </div>
+            <div class="map-container">
+                <canvas id="humidityCanvas" width="500" height="250"></canvas>
+                <div class="map-label">Humidity</div>
+            </div>
+            <div class="map-container">
+                <canvas id="heightCanvas" width="500" height="250"></canvas>
+                <div class="map-label">Height</div>
+            </div>
+        </div>
+        
+        <div class="main-map-container">
+            <canvas id="biomeCanvas" width="500" height="250"></canvas>
+            <div class="map-label">Biome Map</div>
+            <div id="tooltip" class="tooltip"></div>
+        </div>
+    </main>
+
+    <script src="js/perlin.js"></script>
+    <script src="js/biome_data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
